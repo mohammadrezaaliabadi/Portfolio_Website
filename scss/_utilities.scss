@@ -1,0 +1,109 @@
+.container{
+    max-width: $website-width;
+    padding: 0 1.5rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+//Button
+
+%btn-shared{
+    display: inline-block;
+    padding:  0.8rem 2rem;
+    transition: all 0.5s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    &-main {
+        @extend %btn-shared;
+        color: #333;
+        background-color: $main-color;
+    }
+
+    &-light{
+        @extend %btn-shared;
+        color: #333;
+        background-color: $light-color;
+    }
+
+    &-dark{
+        @extend %btn-shared;
+        color: #f4f4f4;
+        background-color: $dark-color;
+    }
+}
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover
+{
+background-color: $main-color;
+}
+
+.lead{
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+// Backgrounds
+
+.bg{
+    &-main{
+        background-color: $main-color;
+        color: set-text-color($main-color);
+    }
+    &-dark{
+        background-color: $dark-color;
+        color: set-text-color($dark-color);
+    }
+    &-light{
+        background-color: $light-color;
+        color: set-text-color($light-color);
+    }
+    &-medium{
+        background-color: $medium-color;
+        color: set-text-color($medium-color);
+    }
+}
+
+
+.text-center {
+    text-align:center;
+}
+
+.py{
+
+    @for $i from 1 to 5 {
+        &-#{$i} {
+            padding: #{$i}rem 0;
+        }
+    }
+
+}
+.my{
+
+    @for $i from 1 to 5 {
+        &-#{$i} {
+            margin: #{$i}rem 0;
+        }
+    }
+
+}
+
+.section-title{
+    font-size: 2rem;
+    display: block;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.bottom-line{
+    height: 2px;
+    width: 3rem;
+    background-color: $main-color;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
